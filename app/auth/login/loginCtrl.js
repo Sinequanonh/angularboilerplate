@@ -1,4 +1,4 @@
-app.controller('loginCtrl', function($scope, $http, $rootScope, $location, authSvc) {
+app.controller('loginCtrl', function($scope, $location, authSvc) {
 
   $scope.email = 'test@example.com'
   $scope.password = 'test'
