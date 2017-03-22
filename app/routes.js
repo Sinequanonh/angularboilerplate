@@ -9,7 +9,7 @@ function config($urlRouterProvider, $stateProvider) {
   $stateProvider.state('login', {
     url: '/login',
     controller: 'loginCtrl',
-    templateUrl: 'app/auth/login/login.html',
+    templateUrl: 'app/login/login.html',
   })
 
   $stateProvider.state('dashboard', {

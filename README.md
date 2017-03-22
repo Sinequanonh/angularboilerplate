@@ -1,7 +1,20 @@
 # 🔥 AngularJS API boiler plate
 
-Includes:
-- ES6
+### Features:
+- Gulp
 - Bootstrap
 - Sass
-- Node + Expres server
+- Authentication
+
+Next:
+- ES6
+- Express server
+- SQL tables + mockups
+
+## Quick start
+
+1. Clone this repo using `git clone https://github.com/Sinequanonh/angularboilerplate.git`
+2. `yarn install` to install dependencies
+3. `gulp`
+
+Now you're ready to rumble!
