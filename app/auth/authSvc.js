@@ -1,4 +1,4 @@
-app.service('authSvc', function($http, $localStorage) {
+app.service('authSvc', function($http, $localStorage, $rootScope) {
   console.log('Auth Service')
   var service = {}
 

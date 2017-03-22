@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-controller="homeCtrl">
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,9 +15,6 @@
   </head>
   <body>
     <div class="container">
-        <a ui-sref="home">Home</a> | 
-        <a ng-if="!localStorage.currentUser" ui-sref="login">Login</a> | 
-        <button ng-if="localStorage.currentUser" class="btn btn-default" ng-click="Logout()">Logout</button>
     </div>
 
     <ui-view></ui-view>
@@ -35,6 +32,7 @@
 
     <!-- CONTROLLERS -->
     <script src="app/home/homeCtrl.js"></script>
+    <script src="app/auth/login/loginCtrl.js"></script>
 
     <!-- SERVICE -->
     <script src="app/auth/authSvc.js"></script>
