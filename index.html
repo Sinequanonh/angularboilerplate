@@ -14,7 +14,11 @@
     <link href="stylesheets/css/main.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+        <a ui-sref="home">Home</a> | 
+        <a ng-if="!localStorage.currentUser" ui-sref="login">Login</a> | 
+        <button ng-if="localStorage.currentUser" class="btn btn-default" ng-click="Logout()">Logout</button>
+    </div>
 
     <ui-view></ui-view>
     
@@ -23,12 +27,16 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/ngstorage/ngStorage.min.js"></script>
 
     <!-- APP -->
-    <script src="build/app.js"></script>
-    <script src="build/routes.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
 
     <!-- CONTROLLERS -->
-    <script src="build/home/homeCtrl.js"></script>
+    <script src="app/home/homeCtrl.js"></script>
+
+    <!-- SERVICE -->
+    <script src="app/auth/authSvc.js"></script>
   </body>
 </html>
