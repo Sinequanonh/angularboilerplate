@@ -16,6 +16,7 @@ app.service('authSvc', function($http, $localStorage, $rootScope) {
             email: email,
             token: response.data.token_session,
           }
+          $rootScope.currentUser = $localStorage.currentUser
           $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token_session
           callback(true)
         } else {
@@ -26,6 +27,7 @@ app.service('authSvc', function($http, $localStorage, $rootScope) {
 
  function Logout() {
     delete $localStorage.currentUser
+    delete $rootScope.currentUser
     $http.defaults.headers.common.Authorization = ''
   }
 

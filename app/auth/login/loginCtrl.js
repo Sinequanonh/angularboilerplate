@@ -5,15 +5,11 @@ app.controller('loginCtrl', function($scope, $http, $rootScope, $location, authS
 
   $scope.Login = function() {
     authSvc.Login($scope.email, $scope.password, function(result) {
-      console.log(result)
       if (result === true) {
         $location.path('/')
       }
     })
   }
 
-  $scope.Logout = function() {
-    authSvc.Logout()
-  }
-  $scope.Logout()
+  authSvc.Logout()
 })
