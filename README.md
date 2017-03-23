@@ -5,10 +5,10 @@
 - Bootstrap
 - Sass
 - Authentication
+- Express server
 
 ### Next:
 - ES6
-- Express server
 - SQL tables + mockups
 
 ## Quick start
@@ -20,4 +20,5 @@
 In another terminal window:
 1. `cd server`
 2. supervisor server.js`
+
 Now you're ready to rumble!
