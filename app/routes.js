@@ -25,7 +25,6 @@ function run($rootScope, $http, $location, $localStorage) {
   if ($localStorage.currentUser) {
     $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.currentUser.token;
   }
-  console.log('Ca tente')
 
   $rootScope.currentUser = $localStorage.currentUser
 

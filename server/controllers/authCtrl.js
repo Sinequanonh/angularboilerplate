@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'root',
-  database : 'airhost'
+  database : 'airhost',
 })
 
 // SIGNIN

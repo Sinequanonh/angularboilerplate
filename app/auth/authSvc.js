@@ -1,4 +1,4 @@
-app.service('authSvc', function($http, $localStorage, $rootScope) {
+app.service('authSvc', function($http, $localStorage, $rootScope, cfg) {
   console.log('Auth Service')
   var service = {}
 
@@ -9,7 +9,7 @@ app.service('authSvc', function($http, $localStorage, $rootScope) {
       password: password,
     }
 
-    $http.get('http://127.0.0.1' + ':8787/api/signin', { params: params })
+    $http.get(cfg.url + ':' + cfg.port + '/api/signin', { params: params })
       .then(function(response) {
         if (response.data.token_session) {
           $localStorage.currentUser = {
