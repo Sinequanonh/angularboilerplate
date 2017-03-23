@@ -9,7 +9,7 @@ app.service('authSvc', function($http, $localStorage, $rootScope) {
       password: password,
     }
 
-    $http.get('http://127.0.0.1' + ':8789/api/signin', { params: params })
+    $http.get('http://127.0.0.1' + ':8787/api/signin', { params: params })
       .then(function(response) {
         if (response.data.token_session) {
           $localStorage.currentUser = {

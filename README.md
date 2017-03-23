@@ -1,4 +1,4 @@
-# 🔥 AngularJS API boiler plate
+# AngularJS API boiler plate 🔥
 
 ### Features:
 - Gulp
@@ -6,7 +6,7 @@
 - Sass
 - Authentication
 
-Next:
+### Next:
 - ES6
 - Express server
 - SQL tables + mockups
