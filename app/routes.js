@@ -25,7 +25,7 @@ function config($urlRouterProvider, $stateProvider) {
   })
   
   $urlRouterProvider.otherwise('/')
-} 
+}
 
 function run($rootScope, $http, $location, $localStorage) {
   if ($localStorage.currentUser) {
