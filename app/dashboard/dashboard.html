@@ -2,9 +2,9 @@
   <div class="col-md-6 col-md-offset-3">
     <a ui-sref="home">Home</a>
     <a ng-if="currentUser.token" ui-sref="dashboard">| Dashboard</a>
-    <a ng-if="!currentUser.token" ui-sref="login"> | Login</a>
-    <a ng-if="!currentUser.token" ui-sref="register"> | Register</a>
-    <a ng-if="currentUser.token" ui-sref="login">| Logout</a>
+    <a ng-if="!currentUser.token" ui-sref="login" class="pull-right"> | Login</a>
+    <a ng-if="!currentUser.token" ui-sref="register" class="pull-right"> | Register</a>
+    <a ng-if="currentUser.token" ui-sref="login" class="pull-right">| Logout</a>
     {{ currentUser }}
     <h2>Dashboard</h2>
   </div>
