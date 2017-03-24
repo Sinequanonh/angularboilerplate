@@ -23,16 +23,16 @@ function config($urlRouterProvider, $stateProvider) {
 
 function run($rootScope, $http, $location, $localStorage) {
   if ($localStorage.currentUser) {
-    $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.currentUser.token;
+    $http.defaults.headers.common.Authorization = `Bearer ${$localStorage.currentUser.token}`
   }
 
   $rootScope.currentUser = $localStorage.currentUser
 
   $rootScope.$on('$locationChangeStart', function(event, next, current) {
-    var publicPages = ['/', '/login'];
-    var restrictedPage = publicPages.indexOf($location.path()) === -1;
+    var publicPages = ['/', '/login']
+    var restrictedPage = publicPages.indexOf($location.path()) === -1
     if (restrictedPage && !$localStorage.currentUser) {
-      $location.path('/login');
+      $location.path('/login')
     }
   })
 }

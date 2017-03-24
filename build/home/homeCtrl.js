@@ -1,6 +1,5 @@
 'use strict';
 
 app.controller('homeCtrl', function ($scope) {
-  console.log('Salut');
+  console.log('home Controller');
 });
-//# sourceMappingURL=homeCtrl.js.map

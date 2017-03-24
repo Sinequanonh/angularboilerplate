@@ -19,6 +19,6 @@
 
 In another terminal window:
 1. `cd server`
-2. supervisor server.js`
+2. `supervisor server.js`
 
 Now you're ready to rumble!

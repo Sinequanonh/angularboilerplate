@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'prod') {
 
   const key  = fs.readFileSync('/etc/letsencrypt/live/airhostly.co-0001/privkey.pem', 'utf8')
   const cert = fs.readFileSync('/etc/letsencrypt/live/airhostly.co-0001/fullchain.pem', 'utf8')
-  const ca          = fs.readFileSync('/etc/letsencrypt/live/airhostly.co-0001/fullchain.pem', 'utf8')
+  const ca   = fs.readFileSync('/etc/letsencrypt/live/airhostly.co-0001/fullchain.pem', 'utf8')
 
   const credentials = {
     ca,

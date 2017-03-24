@@ -1,12 +1,12 @@
 app.service('authSvc', function($http, $localStorage, $rootScope, cfg) {
   console.log('Auth Service')
-  var service = {}
+  const service = {}
 
   function Login(email, password, callback) {
 
     var params = {
-      email: email,
-      password: password,
+      email,
+      password,
     }
 
     $http.get(cfg.url + ':' + cfg.port + '/api/signin', { params: params })
@@ -17,7 +17,7 @@ app.service('authSvc', function($http, $localStorage, $rootScope, cfg) {
             token: response.data.token_session,
           }
           $rootScope.currentUser = $localStorage.currentUser
-          $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token_session
+          $http.defaults.headers.common.Authorization = `Bearer ${response.data.token_session}`
           callback(true)
         } else {
           callback(false)
