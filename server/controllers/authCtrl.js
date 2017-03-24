@@ -15,7 +15,10 @@ const signin = (req, res) => {
   const password = sha1(req.query.password) || res.send({'error': 'Wrong password'})
   connection.query('SELECT * FROM users WHERE `email` = ?', [req.query.email], (err, rows, fields) => {
     if (!err) {
-      if (rows[0].password === password) { res.send(rows[0]) }
+      if (rows[0] && rows[0].password === password) {
+        console.log(`${req.query.email} has logged in!`)
+        res.send(rows[0])
+      }
       else {
         res.send({'error': 'Wrong password'})
         console.log('Error while performing Query: Wrong password')
@@ -32,10 +35,12 @@ const signin = (req, res) => {
 const register = (req, res) => {
 
   console.log('Registering...')
+  console.log(req.body.params)
   const body = req.body.params
   const date_registering = new Date()
   const token_session = randtoken.generate(16)
-  const password = sha1(body.password);
+  const password = sha1(body.password)
+
 
   const params = {
     'email':          body.email,
@@ -43,12 +48,18 @@ const register = (req, res) => {
     'token_session':  token_session,
     'subscription':   date_registering,
     'token_airbnb':   '',
-    'ip':             body.ip
+    'ip':             body.ip,
   }
 
   connection.query('INSERT INTO users SET ?', params, (err, rows) => {
-    if (!err) { res.send(params.token_session) } 
-    else { console.log(err) }
+    if (!err) {
+      console.log(`${params.email} has successfully subscribed!`)
+      res.send(params)
+    } 
+    else {
+      console.log('Error when registering', err)
+      res.send({'error': 'Error'})
+    }
   })
 }
 

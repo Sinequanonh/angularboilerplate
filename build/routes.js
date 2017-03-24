@@ -14,6 +14,12 @@ function config($urlRouterProvider, $stateProvider) {
     templateUrl: 'app/login/login.html'
   });
 
+  $stateProvider.state('register', {
+    url: '/register',
+    controller: 'registerCtrl',
+    templateUrl: 'app/register/register.html'
+  });
+
   $stateProvider.state('dashboard', {
     url: '/dashboard',
     controller: 'homeCtrl',
@@ -31,7 +37,7 @@ function run($rootScope, $http, $location, $localStorage) {
   $rootScope.currentUser = $localStorage.currentUser;
 
   $rootScope.$on('$locationChangeStart', function (event, next, current) {
-    var publicPages = ['/', '/login'];
+    var publicPages = ['/', '/login', '/register'];
     var restrictedPage = publicPages.indexOf($location.path()) === -1;
     if (restrictedPage && !$localStorage.currentUser) {
       $location.path('/login');

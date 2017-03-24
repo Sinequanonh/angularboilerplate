@@ -18,7 +18,6 @@ gulp.task('serve', ['sass'], () => {
     gulp.watch('app/**/*.js', ['babel']).on('change', browserSync.reload)
 });
 
-// Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', () => {
     return gulp.src("./stylesheets/scss/*.scss")
         .pipe(sass())
