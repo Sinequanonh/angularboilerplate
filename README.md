@@ -6,9 +6,9 @@
 - Sass
 - Authentication
 - Express server
-
-### Next:
 - ES6
+
+### Coming:
 - SQL tables + mockups
 
 ## Quick start
