@@ -3,14 +3,14 @@
 const gulp         = require('gulp')
 const gutil        = require('gulp-util')
 const sass         = require('gulp-sass')
-const browserSync  = require('browser-sync').create();
+const browserSync  = require('browser-sync').create()
 const babel        = require('gulp-babel')
 
 gulp.task('serve', ['sass'], () => {
 
     browserSync.init({
         server: '.',
-        port: 3005
+        port: 3005,
     })
 
     gulp.watch('./stylesheets/scss/*.scss', ['sass'])
